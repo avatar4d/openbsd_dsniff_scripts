@@ -10,8 +10,8 @@
   URLSNARF_LOG=urlsnarf
 ##App Flags
 ##CHANGE THESE TO WHATEVER IS APPROPRIATE FOR YOU
-  DSNIFF_FLAGS="not host youtube.com and not host supertorrents.org and not host iptorrents.com and not host 172.16.50.10"
-  URLSNARF_FLAGS="not host supertorrents.org and not host iptorrents.com and not host 172.16.50.10"
+  DSNIFF_FLAGS="not host youtube.com"
+  URLSNARF_FLAGS=""
   INTERFACE=vr0 
 
 
