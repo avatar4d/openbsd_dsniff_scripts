@@ -4,6 +4,10 @@ OpenBSD dsniff agent rc scripts
 
 This is a script that will startup, shutdown, and restart dsniff, mailsnarf, msgsnarf and urlsnarf listening agents on OpenBSD routers/firewalls. It also logs their output and rotates the files  when they reach 50MB.
 
+
+NOTE: This will add significant CPU overhead so be careful when/where you run this. For instance, while saturating a 100Mbit link to approximately 50% will produce a CPU load average of about 2 on an embedded device.
+
+
 By default it logs to /var/log/dsniff/$APPNAME
 
 
@@ -27,8 +31,8 @@ Then edit the rc.local script:
 Then add the following:
 
        ## start dsniff daemons
-       if [ -x /root/bin/sniff.sh ]; then
+       if [ -x /root/bin/openbsd_dsniff_scripts/sniffer_agents.sh ]; then
             echo 'dsniff daemons'
-            /root/bin/sniff.sh
+            /root/bin/openbsd_dsniff_scripts/sniffer_agents.sh
        fi
 

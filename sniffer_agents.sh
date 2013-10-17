@@ -20,6 +20,7 @@ die(){
 #
 #Kills each app if it is running
 #
+## Make cleaner with a for loop
   if [ -n `pgrep dsniff` ];
   then
     pkill dsniff
@@ -51,6 +52,7 @@ for LOG in [[ $DSNIFF_LOG $MAILSNARF_LOG $MSGSNARF_LOG $URLSNARF_LOG ]];
 do
   if [[ -e $LOGDIR/$LOG && `ls -la $LOGDIR/$LOG | awk '{print $5}'` -ge 52428800 ]];
   then
+##Make the following repetatives cleaner with a for loop
     if [ -e $LOGDIR/$LOG.4.gz ];
     then
       mv $LOGDIR/$LOG.4.gz $LOGDIR/$LOG.5.gz
